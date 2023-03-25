@@ -8,9 +8,10 @@
 * @width: get width
 * @precision: precision specification
 * @size: size specifier
-* Return: number of chars printed 
+* Return: number of chars printed
 */
-int print_pointer(va_list types, char buffer[], int flags, int width, int precision, int size)
+int print_pointer(va_list types, char buffer[],
+int flags, int width, int precision, int size)
 {
 char extra_c = 0, padd = ' ';
 int ind = BUFF_SIZE - 2, length = 2, padd_start = 1; /* length=2, for '0x' */
@@ -38,7 +39,8 @@ else if (flags & F_SPACE)
 extra_c = ' ', length++;
 ind++;
 /*return (write(1, &buffer[i], BUFF_SIZE - i - 1));*/
-return (write_pointer(buffer, ind, length, width, flags, padd, extra_c, padd_start));
+return (write_pointer(buffer, ind, length, width,
+flags, padd, extra_c, padd_start));
 }
 
 /************************* PRINT NON PRINTABLE *************************/
@@ -52,7 +54,8 @@ return (write_pointer(buffer, ind, length, width, flags, padd, extra_c, padd_sta
 * @size: size specifier
 * Return: number of chars printed
 */
-int print_non_printable(va_list types, char buffer[], int flags, int width, int precision, int size)
+int print_non_printable(va_list types, char buffer[],
+int flags, int width, int precision, int size)
 {
 int i = 0, offset = 0;
 char *str = va_arg(types, char *);
@@ -82,9 +85,10 @@ return (write(1, buffer, i + offset));
 * @width: get width
 * @precision: precision specification
 * @size: size specifier
-* Return: number of chars printed 
+* Return: number of chars printed
 */
-int print_reverse(va_list types, char buffer[], int flags, int width, int precision, int size)
+int print_reverse(va_list types, char buffer[],
+int flags, int width, int precision, int size)
 {
 char *str;
 int i, count = 0;
@@ -93,7 +97,7 @@ UNUSED(flags);
 UNUSED(width);
 UNUSED(size);
 str = va_arg(types, char *);
-if (str == Null)
+if (str == NULL)
 {
 UNUSED(precision);
 str = ")Null(";
@@ -108,7 +112,6 @@ count++;
 }
 return (count);
 }
-       
 /************************* PRINT A STRING IN ROT13  *************************/
 /**
 * print_rot13string - print a string in rot13
@@ -120,7 +123,8 @@ return (count);
 * @size: size specifier
 * Return: number of chars printed
 */
-int print_rot13string(va_list types, char buffer[], int flags, int width, int precision, int size)
+int print_rot13string(va_list types, char buffer[],
+int flags, int width, int precision, int size)
 {
 char x;
 char *str;
@@ -138,7 +142,7 @@ if (str == NULL)
 str = "(AHYY)";
 for (i = 0; str[i]; i++)
 {
-for (l = 0; in[j]; j++)
+for (j = 0; in[j]; j++)
 {
 if (in[j] == str[i])
 {
