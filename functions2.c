@@ -131,7 +131,7 @@ char *str;
 unsigned int i, j;
 int count = 0;
 char in[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-char out[] = " NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+char out[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 str = va_arg(types, char *);
 UNUSED(buffer);
 UNUSED(flags);
