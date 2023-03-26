@@ -92,7 +92,7 @@ return (write(1, "%%", 1));
 /************************* PRINT INT *************************/
 /**
 * print_int - print int
-* @types: list a of arguments
+* @types: lista of arguments
 * @buffer: buffer array to handle print
 * @flags: calculates active flags
 * @width: get width
@@ -149,7 +149,7 @@ UNUSED(width);
 UNUSED(precision);
 UNUSED(size);
 n = va_arg(types, unsigned int);
-m = 2147483648; /* (2 ^ 32) */
+m = 2147483648; /* (2 ^ 31) */
 a[0] = n / m;
 for (i = 1; i < 32; i++)
 {
