@@ -56,6 +56,7 @@ int flags, int width, int precision, int size)
 	int length = BUFF_SIZE - ind - 1;
 	char padd = ' ', extra_ch = 0;
 	UNUSED(size);
+	
 	if ((flags & F_ZERO) && !(flags & F_MINUS))
 	padd = '0';
 	if (is_negative)
