@@ -224,7 +224,7 @@ int width, int flags, char padd, char extra_c, int padd_start)
 	/* extra char to left of padd */
 	{
 	if (extra_c)
-	buffer[--padd_start] = extra_c
+	  buffer[--padd_start] = extra_c;
 	buffer[1] = '0';
 	buffer[2] = 'x';
 	return (write(1, &buffer[padd_start], i - padd_start) +
