@@ -5,7 +5,7 @@
  * handle_write_char - Prints a string
  * @c: char types
  * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags
+ * @flags: Calculates active flags
  * @width: get width
  * @precision: precision specifier
  * @size: Size specifier
@@ -44,7 +44,7 @@ int flags, int width, int precision, int size)
  * @is_negative: Lista of arguments
  * @ind: char types
  * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags
+ * @flags: Calculates active flags
  * @width: get width
  * @precision: precision specifier
  * @size: Size specifier
@@ -224,7 +224,7 @@ int width, int flags, char padd, char extra_c, int padd_start)
 	/* extra char to left of padd */
 	{
 	if (extra_c)
-	  buffer[--padd_start] = extra_c;
+	buffer[--padd_start] = extra_c;
 	buffer[1] = '0';
 	buffer[2] = 'x';
 	return (write(1, &buffer[padd_start], i - padd_start) +
